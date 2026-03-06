@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gestión de Tareas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+<!-- NUEVA TAREA -->
+
+<ion-item>
+  <ion-input placeholder="Nueva tarea" [(ngModel)]="title"></ion-input>
+</ion-item>
+
+<ion-button expand="block" (click)="createTask()">
+Agregar
+</ion-button>
+
+<br>
+
+<!-- TABLA -->
+
+<ion-grid>
+
+<!-- HEADER -->
+
+<ion-row *ngFor="let t of tasks">
+
+  <ion-col size="1">{{t.id}}</ion-col>
+
+  <ion-col size="4">
+    <ion-input [(ngModel)]="t.title"></ion-input>
+  </ion-col>
+
+ <ion-col size="3">
+  <span [hidden]="t.completed">Pendiente</span>
+  <span [hidden]="!t.completed">Completada</span>
+</ion-col>
+
+  <ion-col size="4">
+    <ion-button size="small" (click)="saveTask(t)">Guardar</ion-button>
+    <ion-button size="small" color="success" (click)="toggleComplete(t)">
+      {{t.completed ? 'Desmarcar' : 'Completar'}}
+    </ion-button>
+    <ion-button size="small" color="danger" (click)="deleteTask(t)">Eliminar</ion-button>
+  </ion-col>
+
+</ion-row>
+
+</ion-grid>
+
+</ion-content>
