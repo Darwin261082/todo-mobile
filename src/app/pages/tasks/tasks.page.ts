@@ -95,7 +95,7 @@ export class TasksPage implements OnInit {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer ' + token
         },
-        body: JSON.stringify({ completed: task.completed })
+        body: JSON.stringify({ title: task.title,completed: task.completed })
       }).catch(err => {
         console.error('Error al actualizar:', err);
         task.completed = !task.completed; // revertir
