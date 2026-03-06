@@ -38,7 +38,7 @@ Android Studio / Xcode si quieres compilar para dispositivos
 
 Clonar el repositorio:
 
-git clone https://github.com/tu-usuario/todo-mobile.git
+git clone https://github.com/Darwin261082/todo-mobile.git
 cd todo-mobile
 
 Instalar dependencias:
